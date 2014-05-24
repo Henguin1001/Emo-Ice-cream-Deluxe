@@ -1,0 +1,13 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	{# blocks enable the outer script to inject code into the page #}
+	{{ block('style') }}
+	{{ block('scripts') }}
+
+</head>
+<body>
+	{{ block('content') }}
+</body>
+</html>
