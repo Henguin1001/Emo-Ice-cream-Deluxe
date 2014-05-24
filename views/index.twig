@@ -1,0 +1,20 @@
+
+<DOCTYPE html>
+<html>
+<head>
+	{# this is a twig comment #}
+	{# this line below prints the title variable #}
+	<title>{{ title }}</title>
+</head>
+<body>
+	{# classic loops #}
+	{% for element in array %}
+		{{ element }}
+	{% endfor %}
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect('http://localhost');
+	</script>
+</body>
+</html>
