@@ -37,9 +37,9 @@ if ('development' == app.get('env')) {
 ////////////
 
 
-var routes = require('./routes');
+var express_routes = require('./routes/express');
+express_routes(app);
 
-app.get('/', routes.index);
 
 ////////////////
 // End Routes //
@@ -56,5 +56,5 @@ server.listen(app.get('port'), function() {
 // socket.io
 var socket_io = require('socket.io'),
 	io = socket_io.listen(server);
-
+require('./routes/socket.io')();
 
