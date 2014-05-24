@@ -6,7 +6,8 @@ module.exports = function(app) {
 	});
 	app.get('/play', function(req, res) {
 		res.render('play',{
-			title:"play"
+			title:"Play",
+            foods: ["Breakfast", "Lunch", "Dinner", "Dessert", "Snacks", "Fast Food"]
 		})
 	});
 
