@@ -134,7 +134,16 @@
     }
     
     body{
-        padding-bottom: 20px;   
+        padding-bottom: 20px;
+        padding-top: 60px;
+    }
+    
+    .mynav{
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
     }
 </style>
 {% endblock %}
@@ -158,13 +167,13 @@ function showInfo(id) {
 {% endblock %}
 
 {% block content %}
-<div class="navbar navbar-default">
+<div class="navbar navbar-default mynav">
      <a class="navbar-brand" href="/"><img class="nav-logo" src="http://media.tumblr.com/tumblr_lg2g3hhYne1qdrcbv.jpg"> Emo Ice Cream Deluxe</a>
 </div>
 {% for food in foods %}
-        <div class="setbox" onclick="showInfo('{{food|replace({' ': ''})}}')" id="{{food|replace({' ': ''})}}_box">
+        <div class="setbox" onclick="showInfo('{{food.id}}')" id="{{food.id}}_box">
             <div class="settext">
-                <span class="settitle">{{food}}</span>
+                <span class="settitle">{{food.n}}</span>
                 <br>
                 <span class="setnum"></span>
             </div>
@@ -172,11 +181,11 @@ function showInfo(id) {
                 <i class="fa fa-arrow-circle-o-down fa-3x"></i>
             </span>
         </div>
-        <div class="sethidden" id="{{food|replace({' ': ''})}}_info">
-            <a href="game/{{food|replace({' ': ''})}}/">
+        <div class="sethidden" id="{{food.id}}_info">
+            <a href="game/{{food.id}}/">
                 <div>Play Against Random</div>
             </a>
-            <a href="challange/{{food|replace({' ': ''})}}">
+            <a href="challange/{{food.id}}">
                 <div>Challange A Friend</div>
             </a>
         </div>
